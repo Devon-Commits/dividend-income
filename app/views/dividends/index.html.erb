@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dividends</h1>
+
+<div id="dividends">
+  <% @dividends.each do |dividend| %>
+    <%= render dividend %>
+    <p>
+      <%= link_to "Show this dividend", dividend %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dividend", new_dividend_path %>

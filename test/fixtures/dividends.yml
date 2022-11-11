@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_symbol: MyString
+  stock_name: MyString
+  div_amount: 1.5
+  stock_owned: 1.5
+  div_total: 1.5
+
+two:
+  stock_symbol: MyString
+  stock_name: MyString
+  div_amount: 1.5
+  stock_owned: 1.5
+  div_total: 1.5

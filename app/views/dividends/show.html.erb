@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dividend %>
+
+<div>
+  <%= link_to "Edit this dividend", edit_dividend_path(@dividend) %> |
+  <%= link_to "Back to dividends", dividends_path %>
+
+  <%= button_to "Destroy this dividend", @dividend, method: :delete %>
+</div>
