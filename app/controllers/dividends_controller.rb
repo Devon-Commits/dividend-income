@@ -67,4 +67,5 @@ class DividendsController < ApplicationController
     def dividend_params
       params.require(:dividend).permit(:stock_symbol, :stock_name, :div_amount, :stock_owned, :div_total)
     end
+
 end
