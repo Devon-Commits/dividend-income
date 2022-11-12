@@ -14,7 +14,11 @@
   <body>
     <%= render 'home/navigation' %>
   <div class='container'>
-    <br/>
+  <br/>
+    <% if notice %>
+      <%= render 'layouts/alerts' %>
+    <% end %>
+
     <%= yield %>
   </div>
 

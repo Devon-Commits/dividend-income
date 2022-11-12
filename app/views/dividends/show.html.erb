@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <div class="card">
   <h3 class="card-header text-bg-info"><%= @dividend.stock_symbol %></h3>
   <div class="card-body">
@@ -11,11 +9,12 @@
         <li class="list-group-item">Dividend Total: <%= number_to_currency(@dividend.stock_total) %></li>
       </ul>
     </div>
+    <br/>
+    <p class='fst-italic'>*If your Annual Dividend shows up as $0.00, update the Annual Dividend with numbers only, ie no '$'</p>
   </div>
 </div>
+<br/>
 <div>
-  <%= link_to "Edit this dividend", edit_dividend_path(@dividend) %> |
-  <%= link_to "Back to dividends", dividends_path %>
-
-  <%= button_to "Destroy this dividend", @dividend, method: :delete %>
+  <%= link_to "Update Dividend", edit_dividend_path(@dividend) %> |
+  <%= link_to "Back to Portfolio", dividends_path %>
 </div>

@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Dividends</h1>
 
 <table class="table table-striped table-hover">
@@ -22,7 +20,7 @@
         <td><%= dividend.stock_owned %></td>
         <td><%= number_to_currency(dividend.stock_total) %></td>
         <td><%= link_to "Edit", edit_dividend_path(dividend), class:'btn btn-outline-secondary btn-sm' %></td>
-        <td><%= button_to "Delete", dividend, method: :delete, class:'btn btn-outline-danger btn-sm' %></td>
+        <td><%= button_to "Remove", dividend, method: :delete, class:'btn btn-outline-danger btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
