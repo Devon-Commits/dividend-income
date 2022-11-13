@@ -65,7 +65,7 @@ class DividendsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dividend_params
-      params.require(:dividend).permit(:stock_symbol, :stock_name, :div_amount, :stock_owned, :div_total)
+      params.require(:dividend).permit(:stock_symbol, :stock_name, :div_amount, :stock_owned, :div_total, :user_id)
     end
 
 end

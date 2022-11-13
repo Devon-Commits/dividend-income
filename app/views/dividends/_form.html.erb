@@ -30,6 +30,11 @@
     <%= form.label :stock_owned, style: "display: block" %>
     <%= form.number_field :stock_owned, class:'form-control', placeholder:'ex. 10', :required => true %>
   </div>
+
+  <div class='field form-group'>
+    <%= form.number_field :user_id, id: :dividend_user_id, class:'form-control', value: current_user.id, type: :hidden %>
+  </div>
+
   <br/>
   <div>
     <%= form.submit %>
