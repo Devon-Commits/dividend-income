@@ -13,6 +13,15 @@
   </head>
   <body>
     <%= render 'home/navigation' %>
+    <div class="container text-end">
+      <div class="row">
+        <div class="col">
+          <% if user_signed_in? %>
+            <p>Logged In As: <strong><%= current_user.email.split('@')[0] %></strong></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <div class='container'>
   <br/>
     <% if notice %>

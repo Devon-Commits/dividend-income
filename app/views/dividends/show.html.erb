@@ -4,7 +4,7 @@
     <h4 class="card-title"><%= @dividend.stock_name %></h4>
     <div class="card" style="width: 18rem;">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Annual Dividend: <%= number_to_currency(@dividend.div_amount) %></li>
+        <li class="list-group-item">Annual Dividend: <%= number_to_currency(@dividend.div_amount).chomp('$') %></li>
         <li class="list-group-item">Number of Stocks Owned: <%= @dividend.stock_owned %></li>
         <li class="list-group-item">Dividend Total: <%= number_to_currency(@dividend.stock_total) %></li>
       </ul>
