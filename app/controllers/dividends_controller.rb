@@ -1,5 +1,7 @@
 class DividendsController < ApplicationController
   before_action :set_dividend, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /dividends or /dividends.json
   def index
@@ -12,7 +14,8 @@ class DividendsController < ApplicationController
 
   # GET /dividends/new
   def new
-    @dividend = Dividend.new
+    #@dividend = Dividend.new
+    @dividend = current_user.dividends.build
   end
 
   # GET /dividends/1/edit
@@ -21,7 +24,8 @@ class DividendsController < ApplicationController
 
   # POST /dividends or /dividends.json
   def create
-    @dividend = Dividend.new(dividend_params)
+    #@dividend = Dividend.new(dividend_params)
+    @dividend = current_user.dividends.build(dividend_params)
 
     respond_to do |format|
       if @dividend.save
@@ -56,6 +60,13 @@ class DividendsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def correct_user
+    @dividend = current_user.dividends.find_by(id: params[:id])
+    redirect_to dividends_path, notice: "Not Authorized To Edit This Stock" if @dividend.nil?
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

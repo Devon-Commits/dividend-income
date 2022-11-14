@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :dividends
   
   get 'home/about'
-  root 'home#index'
+  root 'dividends#index'
   #root 'dividends#index'
 end

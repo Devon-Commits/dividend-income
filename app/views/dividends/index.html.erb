@@ -1,29 +1,38 @@
-<h1>Portfolio</h1>
 
-<table class="table table-striped table-hover">
-  <thead class="table-success">
-    <tr>  
-      <th>Stock Symbol:</th>
-      <th>Stock Name:</th>
-      <th>Dividend Amount:</th>
-      <th>Stock(s) Owned:</th>
-      <th>Dividend Total:</th>
-      <th colspan='2'> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @dividends.each do |dividend| %>
-      <tr>
-        <td><%= link_to dividend.stock_symbol, dividend %></td>
-        <td><%= dividend.stock_name %></td>
-        <td><%= number_to_currency(dividend.div_amount) %></td>
-        <td><%= dividend.stock_owned %></td>
-        <td><%= number_to_currency(dividend.stock_total) %></td>
-        <td><%= link_to "Edit", edit_dividend_path(dividend), class:'btn btn-outline-secondary btn-sm' %></td>
-        <td><%= button_to "Remove", dividend, method: :delete, class:'btn btn-outline-danger btn-sm' %></td>
+<% if user_signed_in? %>
+
+  <table class="table table-striped table-hover">
+    <thead class="table-success">
+      <tr>  
+        <th>Stock Symbol:</th>
+        <th>Stock Name:</th>
+        <th>Dividend Amount:</th>
+        <th>Stock(s) Owned:</th>
+        <th>Dividend Total:</th>
+        <th colspan='2'> </th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @dividends.each do |dividend| %>
+        <% if dividend.user == current_user %>
+        <tr>
+          <td><%= link_to dividend.stock_symbol, dividend %></td>
+          <td><%= dividend.stock_name %></td>
+          <td><%= number_to_currency(dividend.div_amount) %></td>
+          <td><%= dividend.stock_owned %></td>
+          <td><%= number_to_currency(dividend.stock_total) %></td>
+          <td><%= link_to "Edit", edit_dividend_path(dividend), class:'btn btn-outline-secondary btn-sm' %></td>
+          <td><%= button_to "Remove", dividend, method: :delete, class:'btn btn-outline-danger btn-sm' %></td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to "Add Stock", new_dividend_path, class:'btn btn-success' %>
+  <%= link_to "Add Stock", new_dividend_path, class:'btn btn-success' %>
+
+<% else %>
+
+<%= render 'home/index' %>
+
+<% end %>

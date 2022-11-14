@@ -15,8 +15,8 @@ gem "bootsnap", require: false
 gem 'rails-ujs', '~> 0.1.0'
 gem 'jquery-rails', '~> 4.5'
 gem 'devise', '~> 4.8', '>= 4.8.1'
-
-
+gem 'finnhub_ruby', '~> 1.1.18'
+gem 'excon'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
