@@ -3,6 +3,9 @@ class DividendsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
+
+  
+
   # GET /dividends or /dividends.json
   def index
     @dividends = Dividend.all
@@ -10,6 +13,21 @@ class DividendsController < ApplicationController
 
   # GET /dividends/1 or /dividends/1.json
   def show
+    require 'iex-ruby-client'
+    require 'net/http'
+    require 'json'
+
+    client = IEX::Api::Client.new(
+      publishable_token: 'pk_c16568797eb94e28928b69ae516eadd9',
+      secret_token: 'secret_token',
+      endpoint: 'https://cloud.iexapis.com/v1'
+    )
+
+    @symbol_insert = @dividend.stock_symbol
+
+    dividends2 = client.dividends('MSFT', '3m') # 93.78
+    @output = dividends2
+
   end
 
   # GET /dividends/new
