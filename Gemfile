@@ -19,7 +19,6 @@ gem 'finnhub_ruby', '~> 1.1.18'
 gem 'excon'
 gem 'openssl', '~> 3.0', '>= 3.0.1'
 gem 'json', '~> 2.6', '>= 2.6.2'
-gem 'iex-ruby-client', '~> 2.0'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

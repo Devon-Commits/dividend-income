@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dividend Income Calculator App
 
-Things you may want to cover:
+* Ruby version 3.1.2
 
-* Ruby version
+* Project utilizing:
 
-* System dependencies
+- Ruby on Rails
+- Bootstrap
+- Devise
 
-* Configuration
+Thank you for taking the time to stop by and check out my app.
 
-* Database creation
+Link to the website here: <% insert_link_here %>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Devon
