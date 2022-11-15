@@ -6,7 +6,7 @@
       <tr>  
         <th>Stock Symbol:</th>
         <th>Stock Name:</th>
-        <th>Dividend Amount:</th>
+        <th>Annual Dividend:</th>
         <th>Stock(s) Owned:</th>
         <th>Dividend Total:</th>
         <th colspan='2'> </th>
@@ -27,10 +27,38 @@
         <% end %>
       <% end %>
     </tbody>
+    <tfoot class="table-success">
+      <tr>
+        <th colspan='2'></th>
+        <th>Total:</th>
+        <th><%= @sum_stock %></th>
+        <th><%= number_to_currency(@sum_div) %></th>
+        <th colspan='2'></th>
+      </tr>
+          
+    </tfoot>
   </table>
 
   <%= link_to "Add Stock", new_dividend_path, class:'btn btn-success' %>
-
+  <div id='summary'>
+    <br/>
+    <h5>Summary:</h5>
+    <p>In passive dividend income, you are currently earning: 
+      <ul>
+        <li><%= number_to_currency(@sum_div/12) %> per Month!</li>
+        <li><%= number_to_currency(@sum_div/4) %> per Quarter!</li>
+        <li><%= number_to_currency(@sum_div) %> per Year!</li>
+      </ul>
+    </p>
+    <p>
+      Most dividends are typically paid either Monthly or Quarterly, check your individual stocks for details on payment frequency.
+      Dividend amounts may change at the companies discretion so make sure to update your portfolio accordingly to reflect the increase/decrease to your portfolio!
+    </p>
+    <hr>
+    <p>
+      <i>**Disclaimer: This site is for informational purposes only and is not intended for trading purposes or advice.**</i>
+    </p>
+  </div>
 <% else %>
 
 <%= render 'home/index' %>

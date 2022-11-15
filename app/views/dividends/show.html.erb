@@ -2,6 +2,7 @@
   <h3 class="card-header text-bg-info"><%= @dividend.stock_symbol %></h3>
   <div class="card-body">
     <h4 class="card-title"><%= @dividend.stock_name %></h4>
+    <br/>
     <div class="card" style="width: 18rem;">
       <ul class="list-group list-group-flush">
         <li class="list-group-item">Annual Dividend: <%= number_to_currency(@dividend.div_amount).chomp('$') %></li>
