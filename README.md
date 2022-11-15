@@ -4,7 +4,7 @@ Dividend Income Calculator App
 
 * Ruby version 3.1.2
 
-* Project utilizing:
+Project utilizing:
 
 - Ruby on Rails
 - Bootstrap

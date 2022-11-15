@@ -29,6 +29,10 @@ group :development do
   gem 'sqlite3', '~> 1.5', '>= 1.5.3'
 end
 
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.4'
+end
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
