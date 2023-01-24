@@ -12,6 +12,6 @@ Project utilizing:
 
 Thank you for taking the time to stop by and check out my app.
 
-Link to the website here: https://dividendincomecalculator.herokuapp.com/dividends
+![screenshot of adding stocks](app/assets/images/add_stock.png?raw=true)
 
-![screenshot of app](app/assets/images/calcscreen.png?raw=true)
+![screenshot of portfolio](app/assets/images/calcscreen.png?raw=true)

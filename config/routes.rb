@@ -4,5 +4,4 @@ Rails.application.routes.draw do
   
   get 'home/about'
   root 'dividends#index'
-  #root 'dividends#index'
 end
